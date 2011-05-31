@@ -33,5 +33,11 @@ adb shell am instrument {app_package_name}/com.google.android.testing.nativedriv
 adb forward tcp:54129 tcp:54129
 }}}
 </li>
+<li>
+You can confirm that the instrumentation is started by running `adb logcat` and looking for a line like this:
+{{{
+I/com.google.android.testing.nativedriver.server.ServerInstrumentation(  273): Jetty started on port 54129
+}}}
+</li>
 </ol>
 After following these steps you can run a !NativeDriver test on the emulator host machine, or the machine connected to the device. For a sample test, see one of the <a href="https://code.google.com/p/nativedriver/source/browse/#svn%2Ftrunk%2Fandroid%2Ftest%2Fcom%2Fgoogle%2Fandroid%2Ftesting%2Fnativedriver">JUnit sample tests</a>. The test code must be linked to *client-standalone.jar*.
