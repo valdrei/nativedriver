@@ -17,7 +17,7 @@ The Android !NativeDriver (AND) works as instrumentation in your app. It starts 
 }}}
 The first element enables the instrumentation against your application. `{app_package_name}` is the name of the package as specified by the manifest element's package attribute. The other lines are permissions to enable testing by AND:
 <ul>
-<li>`INTERNET` - allows the Jetty server to start and listen for web requests. If this is missing, the <a href="https://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/server/ServerInstrumentation.java">ServerInstrumentation</a> cannot start all.</li>
+<li>`INTERNET` - allows the Jetty server to start and listen for web requests. If this is missing, the <a href="https://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/server/ServerInstrumentation.java">!ServerInstrumentation</a> cannot start all.</li>
 <li>`WAKE_LOCK` - allows AND to hold a wake lock, which prevents the screen from sleeping and locking as a result of inactivity. This is optional.</li>
 <li>`DISABLE_KEYGUARD` - allows AND to disable the screen lock when the !ServerInstrumentation starts. This is optional.</li>
 </ul>
