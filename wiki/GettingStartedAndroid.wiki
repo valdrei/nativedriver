@@ -1,4 +1,6 @@
+#summary How to build the NativeDriver server and client libraries and run the sample tests.
 #labels Featured
+
 ==Requirements==
 <ul>
 <li>Android SDK 2.2 or later</li>
