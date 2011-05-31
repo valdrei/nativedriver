@@ -11,8 +11,8 @@ The Android !NativeDriver (AND) works as instrumentation in your app. It starts 
 {{{
   <instrumentation android:targetPackage="{app_package_name}"
    android:name="com.google.android.testing.nativedriver.server.ServerInstrumentation" />
-  <uses-permission android:name="android.permission.WAKE_LOCK" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
   <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 }}}
 The first element enables the instrumentation against your application. `{app_package_name}` is the name of the package as specified by the manifest element's package attribute. The other lines are permissions to enable testing by AND:
