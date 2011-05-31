@@ -1,13 +1,13 @@
 #summary How to configure your build and AndroidManifest.xml file to enable testing your app with Android NativeDriver
 #labels Featured
 
-==Making an Android App Testable with NativeDriver==
+==Making an Android App Testable with !NativeDriver==
 
-The Android NativeDriver (AND) works as instrumentation in your app. It starts a Jetty server on the device which listens for WebDriver JSON protocol requests. In order to make an application run this instrumentation, and respond to these WebDriver requests:
+The Android !NativeDriver (AND) works as instrumentation in your app. It starts a Jetty server on the device which listens for WebDriver JSON protocol requests. In order to make an application run this instrumentation, and respond to these WebDriver requests:
 
 <ol>
-<li>Link *server-standalone.jar* to your application. If you have not built the *server-standalone.jar* file yet, follow the steps under _Build the NativeDriver libraries_ in the <a href="http://code.google.com/p/nativedriver/wiki/GettingStartedAndroid">Getting Started</a> documentation.</li>
-<li>In the app's *AndroidManifest.xml* file, add the following elements in the `<manifest>` element:
+<li>Link *server-standalone.jar* to your application. If you have not built the *server-standalone.jar* file yet, follow the steps under _Build the !NativeDriver libraries_ in the <a href="http://code.google.com/p/nativedriver/wiki/GettingStartedAndroid">Getting Started</a> documentation.</li>
+<li>In the app's !*AndroidManifest.xml* file, add the following elements in the `<manifest>` element:
 {{{
   <instrumentation android:targetPackage="{app_package_name}"
    android:name="com.google.android.testing.nativedriver.server.ServerInstrumentation" />
@@ -34,4 +34,4 @@ adb forward tcp:54129 tcp:54129
 }}}
 </li>
 </ol>
-After following these steps you can run a NativeDriver test on the emulator host machine, or the machine connected to the device. For a sample test, see one of the <a href="https://code.google.com/p/nativedriver/source/browse/#svn%2Ftrunk%2Fandroid%2Ftest%2Fcom%2Fgoogle%2Fandroid%2Ftesting%2Fnativedriver">JUnit sample tests</a>. The test code must be linked to *client-standalone.jar*.
+After following these steps you can run a !NativeDriver test on the emulator host machine, or the machine connected to the device. For a sample test, see one of the <a href="https://code.google.com/p/nativedriver/source/browse/#svn%2Ftrunk%2Fandroid%2Ftest%2Fcom%2Fgoogle%2Fandroid%2Ftesting%2Fnativedriver">JUnit sample tests</a>. The test code must be linked to *client-standalone.jar*.
