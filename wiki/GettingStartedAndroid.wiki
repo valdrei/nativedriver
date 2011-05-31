@@ -11,7 +11,7 @@ Eclipse official site</a></li>
 
 After installing the Android SDK, you may want to put the platform-tools directory in your PATH environment variable, so you can run `adb` easily.
 
-==Build the NativeDriver libraries==
+==Build the !NativeDriver libraries==
 {{{
 # Check-out svn repository
 $ svn checkout https://nativedriver.googlecode.com/svn/trunk/nativedriver --username {Google account e-mail address}
@@ -23,11 +23,11 @@ $ ant
 
 <p>The libraries are built and stored in the nativedriver/android/build directory:</p>
 <ul>
-<li>*server-standalone.jar* - this should be linked to your Android application, and runs on the Android device (or emulator). This is the NativeDriver server, and listens for requests to automate the application, such as “start an activity” or “click a UI element”</li>
-<li>*client-standalone.jar* - this should be linked to the test, which is the NativeDriver client. It implements a WebDriver API which communicates with the server.</li>
+<li>*server-standalone.jar* - this should be linked to your Android application, and runs on the Android device (or emulator). This is the !NativeDriver server, and listens for requests to automate the application, such as “start an activity” or “click a UI element”</li>
+<li>*client-standalone.jar* - this should be linked to the test, which is the !NativeDriver client. It implements a WebDriver API which communicates with the server.</li>
 </ul>
 
-==Import the NativeDriver Sample Projects Into Eclipse==
+==Import the !NativeDriver Sample Projects Into Eclipse==
 <ol>
 <li>Start Eclipse</li>
 <li>Click the _File -> Import..._ menu item.</li>
@@ -37,7 +37,7 @@ $ ant
 <li>Click Finish. Repeat the import process for the `nativedriver/android/test` directory.</li>
 </ol>
 
-<p>The `android-test` project you imported contains sample tests written with Android NativeDriver that also serve to test Android NativeDriver itself. The `simplelayouts` project is an Android app that the sample tests run against.</p>
+<p>The `android-test` project you imported contains sample tests written with Android !NativeDriver that also serve to test Android !NativeDriver itself. The `simplelayouts` project is an Android app that the sample tests run against.</p>
 
 ==Install the simplelayouts app to your device (or emulator)==
 
@@ -48,7 +48,7 @@ You can also run this command:
 adb install nativedriver/android/simple-aut/simplelayouts/bin/simplelayouts.apk
 }}}
 
-==Prepare the Android device to receive NativeDriver requests==
+==Prepare the Android device to receive !NativeDriver requests==
 In the future these steps should be done through code, maybe using an extended `AdbConnection` class. For now, this part must be done manually:
 
 <ol>
@@ -56,9 +56,9 @@ In the future these steps should be done through code, maybe using an extended `
 {{{
 adb shell am instrument com.google.android.testing.nativedriver.simplelayouts/com.google.android.testing.nativedriver.server.ServerInstrumentation
 }}}
-This restarts the app with instrumentation enabled. The NativeDriver `ServerInstrumentation` class listens for requests to drive the app on a device port in a JSON Wire Protocol, which is almost identical to <a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">that protocol used by Selenium WebDriver</a>
+This restarts the app with instrumentation enabled. The !NativeDriver `ServerInstrumentation` class listens for requests to drive the app on a device port in a JSON Wire Protocol, which is almost identical to <a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">that protocol used by Selenium WebDriver</a>
 </li>
-<li>Enable port forwarding to bind the device port to a port on your PC. This allows the NativeDriver client to communicate with the device through a normal TCP connection.
+<li>Enable port forwarding to bind the device port to a port on your PC. This allows the !NativeDriver client to communicate with the device through a normal TCP connection.
 {{{
 adb forward tcp:54129 tcp:54129
 }}}
