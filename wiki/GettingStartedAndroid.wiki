@@ -47,7 +47,7 @@ One easy way to do this is to run the app from Eclipse by right-clicking on the 
 
 You can also run this command:
 {{{
-adb install nativedriver/android/simple-aut/simplelayouts/bin/simplelayouts.apk
+adb install nativedriver/android/sample-aut/simplelayouts/bin/simplelayouts.apk
 }}}
 
 ==Prepare the Android device to receive !NativeDriver requests==
