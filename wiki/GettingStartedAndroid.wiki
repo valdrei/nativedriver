@@ -52,7 +52,9 @@ These two jar packages are represented by the yellow and green components below 
 <li>Select _Existing Projects into Workspace_ in the _General_ category and click _Next_</li>
 <li>Click _Select root directory_ and then click _Browse..._</li>
 <li>Open the `nativedriver/android/sample-aut/simplelayouts` directory in the repository you downloaded</li>
-<li>Click Finish. Repeat the import process for the `nativedriver/android/test` directory.</li>
+<li>Confirm your screen looks like the below image and click Finish. Repeat the import process for the `nativedriver/android/test` directory.
+<img src="http://nativedriver.googlecode.com/files/ImportingSimplelayouts.png" />
+</li>
 </ol>
 
 <p>The `android-test` project you imported contains sample tests written with Android !NativeDriver that also serve to test Android !NativeDriver itself. The `simplelayouts` project is an Android app that the sample tests run against.</p>
