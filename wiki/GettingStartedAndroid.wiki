@@ -38,10 +38,10 @@ $ ant
 <p>The libraries are built and stored in the nativedriver/android/build directory:</p>
 <ul>
 <li>*server-standalone.jar* - this should be linked to your Android application, and runs on the Android device (or emulator). This is the !NativeDriver server, and listens for requests to automate the application, such as “start an activity” or “click a UI element”</li>
-<li>*client-standalone.jar* - this should be linked to the test, which is the !NativeDriver client. It implements a WebDriver API which communicates with the server.</li>
+<li>*client-standalone.jar* - this should be linked to the test, which is the !NativeDriver client. It implements a !WebDriver API which communicates with the server.</li>
 </ul>
 
-These two jar packages are represented by the yellow and green components below - yellow is code that is reused from Selenium WebDriver. Green is original code from NativeDriver.
+These two jar packages are represented by the yellow and green components below - yellow is code that is reused from Selenium !WebDriver. Green is original code from !NativeDriver.
 
 <img src="http://nativedriver.googlecode.com/files/AndroidNativeDriverArchitecture.png" />
 
