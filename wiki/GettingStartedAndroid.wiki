@@ -29,7 +29,7 @@ nativedriver
   |
   |__third_party (all the dependencies we need)
 }}}
-Next use `ant` to build the NativeDriver libraries:
+Next use `ant` to build the !NativeDriver libraries:
 {{{
 $ cd nativedriver/android
 $ ant
@@ -76,7 +76,7 @@ In the future these steps should be done through code, maybe using an extended `
 {{{
 adb shell am instrument com.google.android.testing.nativedriver.simplelayouts/com.google.android.testing.nativedriver.server.ServerInstrumentation
 }}}
-This restarts the app with instrumentation enabled. The !NativeDriver `ServerInstrumentation` class listens for requests to drive the app on a device port in a JSON Wire Protocol, which is almost identical to <a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">that protocol used by Selenium WebDriver</a>
+This restarts the app with instrumentation enabled. The !NativeDriver `ServerInstrumentation` class listens for requests to drive the app on a device port in a JSON Wire Protocol, which is almost identical to <a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">that protocol used by Selenium !WebDriver</a>
 </li>
 <li>Enable port forwarding to bind the device port to a port on your PC. This allows the !NativeDriver client to communicate with the device through a normal TCP connection.
 {{{
