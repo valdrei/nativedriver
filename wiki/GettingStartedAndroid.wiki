@@ -3,23 +3,35 @@
 
 ==Requirements==
 <ul>
-<li>Android SDK 2.2 or later</li>
+<li>Android SDK 2.2 or later - <a href="http://developer.android.com/sdk/index.html">download</a></li>
 <li>Eclipse version 3.5 or later (Eclipse IDE for Java Developers recommended) - <a href="http://www.eclipse.org/downloads/">
-Eclipse official site</a></li>
+download</a></li>
 <li>Android Development Toolkit (ADT) plug-in - <a href="http://developer.android.com/sdk/eclipse-adt.html#installing">Installing ADT</a></li>
-<li>Ant</li>
-<li>JDK 1.6 or later</li>
+<li>Ant - <a href="http://ant.apache.org/bindownload.cgi">download</a></li>
+<li>JDK 1.6 or later - <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u25-download-346242.html">download</a></li>
 </ul>
 
 After installing the Android SDK, you may want to put the platform-tools directory in your PATH environment variable, so you can run `adb` easily.
 
 ==Build the !NativeDriver libraries==
+Check-out the repository with SVN if you have not done so already:
 {{{
-# Check-out svn repository
-$ svn checkout https://nativedriver.googlecode.com/svn/trunk/nativedriver --username {Google account e-mail address}
+$ svn checkout https://nativedriver.googlecode.com/svn/trunk nativedriver --username {Google account e-mail address}
+}}}
+The repository that will be downloaded is organized in this manner:
+{{{
+nativedriver
+  |
+  |__android
+  |     |__src
+  |     |__sample-aut (sample app under test)
+  |     |__test (sample test cases that test the sample app under test)
+  |
+  |__third_party (all the dependencies we need)
+}}}
+Next use `ant` to build the NativeDriver libraries:
+{{{
 $ cd nativedriver/android
-
-# build the NativeDriver libraries:
 $ ant
 }}}
 
@@ -28,6 +40,10 @@ $ ant
 <li>*server-standalone.jar* - this should be linked to your Android application, and runs on the Android device (or emulator). This is the !NativeDriver server, and listens for requests to automate the application, such as “start an activity” or “click a UI element”</li>
 <li>*client-standalone.jar* - this should be linked to the test, which is the !NativeDriver client. It implements a WebDriver API which communicates with the server.</li>
 </ul>
+
+These two jar packages are represented by the yellow and green components below - yellow is code that is reused from Selenium WebDriver. Green is original code from NativeDriver.
+
+<img src="http://nativedriver.googlecode.com/files/AndroidNativeDriverArchitecture.png" />
 
 ==Import the !NativeDriver Sample Projects Into Eclipse==
 <ol>
