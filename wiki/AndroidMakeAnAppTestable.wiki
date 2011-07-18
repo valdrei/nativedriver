@@ -6,7 +6,7 @@
 The Android !NativeDriver (AND) works as instrumentation in your app. It starts a Jetty server on the device which listens for !WebDriver JSON protocol requests. In order to make an application run this instrumentation, and respond to these !WebDriver requests:
 
 <ol>
-<li>Link *server-standalone.jar* to your application. If you have not built the *server-standalone.jar* file yet, follow the steps under _Build the !NativeDriver libraries_ in the <a href="http://code.google.com/p/nativedriver/wiki/GettingStartedAndroid">Getting Started</a> documentation.</li>
+<li>Link *server-standalone.jar* to your application (if you already have an eclipse Android project for your test target, right click the project, Build Path -> Configure Build Path... -> Libraries -> Add JARs or Add External JARs). If you have not built the *server-standalone.jar* file yet, follow the steps under _Build the !NativeDriver libraries_ in the <a href="http://code.google.com/p/nativedriver/wiki/GettingStartedAndroid">Getting Started</a> documentation.</li>
 <li>In the app's *!AndroidManifest.xml* file, add the following elements in the `<manifest>` element:
 {{{
   <instrumentation android:targetPackage="{app_package_name}"
