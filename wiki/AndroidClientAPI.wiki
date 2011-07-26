@@ -1,0 +1,95 @@
+#summary List of available APIs for Android NativeDriver client
+#labels Featured
+
+Following APIs should work on Android !NativeDriver.
+
+= !AndroidNativeDriverBuilder =
+
+Use this class to build !AndroidNativeDriver.
+
+|| `build()` || Build `AndroidNativeDriver` with specified settings. ||
+|| `withAdbConnection(AdbConnection adbConnection)` || Build with specified `AdbConnection`. ||
+|| `withCommandExecutor(CommandExecutor commandExecutor)` || Build with specified `CommandExecutor`. ||
+|| `withDefaultServer()` || Build with default server ( http://localhost:54129/hub ). ||
+|| `withServer(URL url)` || Build with specified server URL. ||
+
+= !AndroidNativeDriver =
+
+The main class of Android !NativeDriver. Provides access to the Android application.
+
+|| `close()` || Close every associated window. ||
+|| `findElement(By by)` || Find the first `WebElement` using the given method. ||
+|| `findElements(By by)` || Find all elements within the current page using the given method. ||
+|| `get(String url)` || Start a new activity either in a new task or the current task. The URL should be in following format:<br>`and-activity://<Activity class name>` ||
+|| `getCurrentUrl()` || Returns a string that looks like a URL that describes the current activity.<br> Each running activity is assigned a unique URL, so the URL can be used to detect the starting of new activities or resuming existing activities. ||
+|| `getKeyboard().sendKeys(CharSequence... keysToSend)` || Sends key events. ||
+|| `getKeyboard().pressKey(Keys keyToPress)` || Sends a press key event. ||
+|| `getKeyboard().releaseKey(Keys keyToRelease)` || Sends a release key event. ||
+|| `getOrientation()` || Returns the current screen orientation of the device. ||
+|| `getScreenshotAs(OutputType<X> target)` || Capture the screenshot and store it in the specified location. ||
+|| `getTitle()` || The title of the current page. ||
+|| `manage().timeouts().implicitlyWait(long time, TimeUnit unit)` || Specifies the amount of time the driver should wait when searching for an element if it is not immediately present. ||
+|| `navigate().back()` || Sends BACK key event. ||
+|| `navigate().toActivity(String activityClass)` || Same As `startActivity(String activityClass)` ||
+|| `quit()` || Quits this driver, closing every associated window. ||
+|| `rotate(ScreenOrientation orientation)` || Changes the orientation of the device. ||
+|| `startActivity(String activityClass)` || Start a new activity either in a new task or the current task. Same As `get("and-activity://" + activityClass)`. ||
+
+= !WebElement =
+
+!WebElement represents an native element in the application UI. This class is defined in original !WebDriver library.
+
+|| `clear()` || If this element is a text entry element, this will clear the value. ||
+|| `click()` || Click this element. ||
+|| `findElement(By by)` || Find the first `WebElement` within the current context using the given method. ||
+|| `findElements(By by)` || Find all elements within the current context using the given method. ||
+|| `getLocation() ` || Where on the page is the top left-hand corner of the rendered element? ||
+|| `getSize()` || What is the width and height of the rendered element? ||
+|| `getText()` || Get the text of this element. ||
+|| `isDisplayed()` || Is this element displayed or not? ||
+|| `isEnabled()` || Is the element currently enabled or not? ||
+|| `isSelected()` || Determine whether or not this element is selected or not. ||
+|| `sendKeys(CharSequence... keysToSend)` || Use this method to simulate typing into an element, which may set its value. ||
+
+= !AndroidNativeBy =
+
+`findElement` and `findElements` can take `AndroidNativeBy` object. `text` and `partialText` are the special method for native applications.
+
+|| `text(String text)` || Matches all elements whose `getText` method return the given value. ||
+|| `partialText(String text)` || Matches all elements whose `getText` method returns a string which contains or equals the given string. ||
+|| `id(String id)` || Matches all elements whose id is the given value. ||
+|| `className(String className)` || Matches all elements whose class name is the given value.  ||
+
+= !ClassNames =
+
+You can use these constant for `By.className`.
+
+|| `BUTTON` ||
+|| `CHECKBOX` ||
+|| `CHECKED_TEXT_VIEW` ||
+|| `EDIT_TEXT` ||
+|| `RADIO_BUTTON` ||
+|| `TEXT_VIEW` ||
+|| `TOGGLE_BUTTON` ||
+|| `VIEW` ||
+|| `WEBVIEW` ||
+
+= !AndroidKeys =
+
+You can emulate clicking hard keys with sending these special keys via `sendKeys`.
+
+|| `ALT_LEFT` ||
+|| `ALT_RIGHT` ||
+|| `BACK` ||
+|| `DEL` ||
+|| `DPAD_DOWN` ||
+|| `DPAD_LEFT` ||
+|| `DPAD_RIGHT` ||
+|| `DPAD_UP` ||
+|| `ENTER` ||
+|| `HOME` ||
+|| `MENU` ||
+|| `SEARCH` ||
+|| `SHIFT_LEFT` ||
+|| `SHIFT_RIGHT` ||
+|| `SYM` ||
