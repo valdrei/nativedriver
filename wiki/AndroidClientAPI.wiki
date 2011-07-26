@@ -3,7 +3,7 @@
 
 Following APIs should work on Android !NativeDriver.
 
-= !AndroidNativeDriverBuilder =
+= [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/client/AndroidNativeDriverBuilder.java AndroidNativeDriverBuilder] =
 
 Use this class to build !AndroidNativeDriver.
 
@@ -13,7 +13,7 @@ Use this class to build !AndroidNativeDriver.
 || `withDefaultServer()` || Build with default server ( http://localhost:54129/hub ). ||
 || `withServer(URL url)` || Build with specified server URL. ||
 
-= !AndroidNativeDriver =
+= [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/client/AndroidNativeDriver.java AndroidNativeDriver] =
 
 The main class of Android !NativeDriver. Provides access to the Android application.
 
@@ -51,7 +51,7 @@ The main class of Android !NativeDriver. Provides access to the Android applicat
 || `isSelected()` || Determine whether or not this element is selected or not. ||
 || `sendKeys(CharSequence... keysToSend)` || Use this method to simulate typing into an element, which may set its value. ||
 
-= !AndroidNativeBy =
+= [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/common/AndroidNativeBy.java AndroidNativeBy] =
 
 `findElement` and `findElements` can take `AndroidNativeBy` object. `text` and `partialText` are the special method for native applications.
 
@@ -60,7 +60,7 @@ The main class of Android !NativeDriver. Provides access to the Android applicat
 || `id(String id)` || Matches all elements whose id is the given value. ||
 || `className(String className)` || Matches all elements whose class name is the given value.  ||
 
-= !ClassNames =
+= [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/client/ClassNames.java ClassNames] =
 
 You can use these constant for `By.className`.
 
@@ -74,7 +74,7 @@ You can use these constant for `By.className`.
 || `VIEW` ||
 || `WEBVIEW` ||
 
-= !AndroidKeys =
+= [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/common/AndroidKeys.java AndroidKeys] =
 
 You can emulate clicking hard keys with sending these special keys via `sendKeys`.
 
