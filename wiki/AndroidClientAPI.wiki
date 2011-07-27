@@ -26,7 +26,7 @@ The main class of Android !NativeDriver. Provides access to the Android applicat
 || `getKeyboard().pressKey(Keys keyToPress)` || Sends a press key event. ||
 || `getKeyboard().releaseKey(Keys keyToRelease)` || Sends a release key event. ||
 || `getOrientation()` || Returns the current screen orientation of the device. ||
-|| `getScreenshotAs(OutputType<X> target)` || Capture the screenshot and store it in the specified location.<br>Driver should be created with `AdbConnection`. ||
+|| `getScreenshotAs(OutputType<X> target)` || Capture the screenshot and store it in the specified location.<br>Driver should be set up with `AdbConnection`. ||
 || `getTitle()` || The title of the current page. ||
 || `manage().timeouts().implicitlyWait(long time, TimeUnit unit)` || Specifies the amount of time the driver should wait when searching for an element if it is not immediately present. ||
 || `navigate().back()` || Sends BACK key event. ||
@@ -43,12 +43,12 @@ The main class of Android !NativeDriver. Provides access to the Android applicat
 || `click()` || Click this element. ||
 || `findElement(By by)` || Find the first `WebElement` within the current context using the given method. ||
 || `findElements(By by)` || Find all elements within the current context using the given method. ||
-|| `getLocation() ` || Where on the page is the top left-hand corner of the rendered element? ||
-|| `getSize()` || What is the width and height of the rendered element? ||
+|| `getLocation() ` || Where on the page is the top left-hand corner of the rendered element?<br> *(not working for now)* ||
+|| `getSize()` || What is the width and height of the rendered element?<br> *(not working for now)* ||
 || `getText()` || Get the text of this element. ||
-|| `isDisplayed()` || Is this element displayed or not? ||
+|| `isDisplayed()` || Is this element displayed or not?<br> *(not working for now)* ||
 || `isEnabled()` || Is the element currently enabled or not? ||
-|| `isSelected()` || Determine whether or not this element is selected or not. ||
+|| `isSelected()` || Determine whether or not this element is selected or not.<br> *(not working for now)* ||
 || `sendKeys(CharSequence... keysToSend)` || Use this method to simulate typing into an element, which may set its value. ||
 
 = [http://code.google.com/p/nativedriver/source/browse/trunk/android/src/com/google/android/testing/nativedriver/common/AndroidNativeBy.java AndroidNativeBy] =
