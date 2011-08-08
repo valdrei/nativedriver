@@ -5,12 +5,11 @@ Following APIs should work on Android !NativeDriver.
 
 = [http://code.google.com/p/nativedriver/source/browse/trunk/iphone/Client/src/com/google/iphone/testing/nativedriver/client/IosNativeDriver.java IosNativeDriver] =
 
-The main class of Android !NativeDriver. Provides access to the Android application.
+The main class of iOS !NativeDriver. Provides access to the iOS application.
 
 || `findElement(By by)` || Find the first `WebElement` using the given method. ||
 || `findElements(By by)` || Find all elements within the current page using the given method. ||
 or resuming existing activities. ||
-location.<br>Driver should be set up with `AdbConnection`. ||
 || `getTitle()` || The title of the current page. ||
 || `manage().timeouts().implicitlyWait(long time, TimeUnit unit)` || Specifies the amount of time the driver should wait when searching for an element if it is not immediately present. ||
 || `quit()` || Quits this driver session. ||
@@ -33,7 +32,7 @@ location.<br>Driver should be set up with `AdbConnection`. ||
 
 = [http://code.google.com/p/nativedriver/source/browse/trunk/iphone/Client/src/com/google/iphone/testing/nativedriver/client/By.java By] =
 
-`findElement` and `findElements` can take `AndroidNativeBy` object. `text` and `partialText` are the special method for native applications.
+`findElement` and `findElements` can take `By` object. `text`, `partialText` and `placeholder` are the special method for native applications.
 
 || `text(String text)` || Matches all elements whose `getText` method return the given value. ||
 || `partialText(String text)` || Matches all elements whose `getText` method returns a string which contains or equals the given string. ||
