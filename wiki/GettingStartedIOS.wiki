@@ -1,0 +1,67 @@
+#summary How to build the NativeDriver server and client libraries and run the sample tests.
+#labels Featured
+
+==Requirements==
+<ul>
+<li>Xcode 4</li>
+<li>Eclipse version 3.5 or later (Eclipse IDE for Java Developers recommended) - <a href="http://www.eclipse.org/downloads/">
+download</a></li>
+<li>Ant - <a href="http://ant.apache.org/bindownload.cgi">download</a></li>
+<li>JDK 1.6 or later - <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u25-download-346242.html">download</a></li>
+</ul>
+
+==Check-out the !NativeDriver libraries==
+Check-out the repository with SVN if you have not done so already:
+{{{
+$ svn checkout https://nativedriver.googlecode.com/svn/trunk nativedriver --username {Google account e-mail address}
+}}}
+The repository that will be downloaded is organized in this manner:
+{{{
+nativedriver
+  |
+  |__iphone
+  |     |__Classes (server codes)
+  |     |__Client (client codes)
+  |     |__NativeDriver.xcodeproj (Xcode project of server)
+  |     |__SampleApp (sample app under test)
+  |     |__Tests (unit tests for server codes)
+  |     |__ThirdParty (Objective-C dependencies we need)
+  |
+  |__third_party (Java dependencies we need)
+}}}
+
+==Build and run !SampleApp app on your emulator==
+
+Open nativedriver/!SampleApp/!SampleApp.xcodeproj with Xcode. This application have already finished the !NativeDriver configurations.
+Run *Automation* target on *iPhone 4.3 Simulator*.
+
+==Build client library==
+Use `ant` to build the !NativeDriver client library:
+{{{
+$ cd nativedriver/iphone/Client
+$ ant
+}}}
+
+<p>*ios-client-standalone.jar* is built and stored in the nativedriver/iphone/Client/build directory. This should be linked to the test, which is the !NativeDriver client. It implements a !WebDriver API which communicates with the server.</p>
+
+==Import sample test case into Eclipse==
+
+<ol>
+<li>Start Eclipse</li>
+<li>Click the _File -> Import..._ menu item.</li>
+<li>Select _Existing Projects into Workspace_ in the _General_ category and click _Next_</li>
+<li>Click _Select root directory_ and then click _Browse..._</li>
+<li>Open the `nativedriver/iphone/Client/test` directory in the repository you downloaded</li>
+<li>Click Finish.</li>
+</ol>
+
+<p>The `ios-test` project you imported contains sample tests written with iOS !NativeDriver.</p>
+
+==Run the test==
+
+<ol>
+<li>Right-click `NativeDriverTest` class in the `ios-test` project</li>
+<li>Select _Run As->JUnit Test_.</li>
+<li>Specify the _Eclipse JUnit Launcher_ as the _Preferred Launcher_.</li>
+<li>Watch the emulator to see the application automatically moving!</li>
+</ol>
