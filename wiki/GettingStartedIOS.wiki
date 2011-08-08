@@ -1,6 +1,12 @@
 #summary How to build the NativeDriver server and client libraries and run the sample tests.
 #labels Featured
 
+==WARNING==
+
+*!NativeDriver is only for the testing purpose.*
+
+!NativeDriver uses private API. Do not use this library in the production codes.
+
 ==Requirements==
 <ul>
 <li>Xcode 4</li>
