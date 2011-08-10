@@ -37,7 +37,7 @@ or resuming existing activities. ||
 || `text(String text)` || Matches all elements whose `getText` method return the given value. ||
 || `partialText(String text)` || Matches all elements whose `getText` method returns a string which contains or equals the given string. ||
 || `placeholder(String text)` || Matches text field elements whose placeholder text is the given value. ||
-|| `id(String id)` || Matches all elements whose accessibility label is the given value.<br>You have to enable accessibility on your simulator. ||
+|| `id(String id)` || Matches all elements whose accessibility label is the given value.<br>You have to [https://groups.google.com/group/nativedriver-users/browse_thread/thread/7c35d95bc3738b5c enable accessibility on your simulator]. ||
 || `className(String className)` || Matches all elements whose class name is the given value.  ||
 
 = [http://code.google.com/p/nativedriver/source/browse/trunk/iphone/Client/src/com/google/iphone/testing/nativedriver/client/ClassNames.java ClassNames] =
